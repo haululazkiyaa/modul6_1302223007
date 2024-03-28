@@ -17,7 +17,7 @@ namespace modul6_1302223007
         {
             // precondition
             Debug.Assert(title != null, "Judul tidak boleh null!");
-            Debug.Assert(title.Length <= 100, "Panjang judul maksimal 100 karakter!");
+            Debug.Assert(title.Length <= 200, "Panjang judul maksimal 200 karakter!");
 
             this.title = title;
             Random generateId = new Random();
@@ -28,7 +28,8 @@ namespace modul6_1302223007
         public void IncreasePlayCount(int num)
         {
             // precondition
-            Debug.Assert(num <= 10000000, "Penambahan jumlah pemutaran maksimal 10.000.000");
+            Debug.Assert(num <= 25000000, "Penambahan play count maksimal 25.000.000");
+            Debug.Assert(num > 0, "Play count tidak boleh negatif");
 
             // exception
             try

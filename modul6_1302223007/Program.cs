@@ -1,4 +1,6 @@
 ﻿using modul6_1302223007;
+using static System.Net.Mime.MediaTypeNames;
+using System.Reflection;
 
 internal class Program
 {
@@ -49,5 +51,35 @@ internal class Program
 
         user1.PrintAllVideoPlaycount();
         Console.WriteLine("Total pemutaran semua film: " + user1.getTotalVideoPlayCount() + " kali");
+
+        // PENGUJIAN (kode diberi komentar karena hanya untuk pengujian)
+
+        // tes prekondisi 
+        // 1. judul null
+        //SayaTubeVideo video11 = new SayaTubeVideo(null);
+
+        // 2. judul lebih dari 200 karakter
+        //SayaTubeVideo video12 = new SayaTubeVideo(
+        //    "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        //    );
+
+        // 3. Penambahan play count lebih dari 25.000.000
+        //video11.IncreasePlayCount(25000001);
+
+        // 4. Play count negatif
+        //video11.IncreasePlayCount(-1);
+
+        // 5. username lebih dari 100 karakter
+        //SayaTubeUser user2 = new SayaTubeUser("Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.");
+
+        // 6. username null
+        //SayaTubeUser user2 = new SayaTubeUser(null);
+
+        // tes overflow exception
+        //for (int i = 0; i < 215; i++)
+        //{
+        //    video1.IncreasePlayCount(10000000);
+        //    video1.PrintVideoDetails();
+        //}
     }
 }
